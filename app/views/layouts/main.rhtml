@@ -62,7 +62,6 @@
 	<ul id="nav">
 
 		<li class="top"><a href="/" class="top_link"><span>Home</span></a></li>
-		<li class="top"><a href="/store" class="top_link"><span>All Products</span></a></li>
 		<% 
 			@main_nav_tags.each_index do |i| 
 				tag = @main_nav_tags[i]
@@ -72,7 +71,9 @@
 					link_to "<span class='down'>"+tag.name+"</span>", {:controller => 'store', :action => 'show_by_tags', :tags => [tag.name]}, :class => 'top_link'
 					
 				%>
-				<%@subnav_tags = tag.children%>
+				<%@subnav_tags = tag.children
+				if @subnav_tags
+				%>
 				<ul class="sub">
 					<% for subtag in @subnav_tags do %>
 						<li>
@@ -87,6 +88,7 @@
 						</li>
 					<% end %>
 				</ul>
+				<%end%>
 			</li>
 		<% end %>
 
