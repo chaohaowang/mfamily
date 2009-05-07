@@ -72,7 +72,7 @@
 					
 				%>
 				<%@subnav_tags = tag.children
-				if @subnav_tags
+				if @subnav_tags <> ""
 				%>
 				<ul class="sub">
 					<% for subtag in @subnav_tags do %>
