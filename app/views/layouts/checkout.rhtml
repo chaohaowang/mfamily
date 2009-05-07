@@ -9,9 +9,11 @@
 			h controller.controller_name
 		end
 		-%> : <%=h @store_name %></title>
-	<%= javascript_include_tag :defaults, :cache => 'default' %>
-  <%= javascript_include_tag 'substruct', 'subModal', :plugin => 'substruct', :cache => 'substruct' %>
-  <%= stylesheet_link_tag 'main' %>
+		<%= javascript_include_tag :defaults, :cache => 'default' %>
+	    <%= javascript_include_tag 'substruct', 'subModal', :plugin => 'substruct', :cache => 'substruct' %>
+		<%= stylesheet_link_tag 'main'%>
+		<%=stylesheet_link_tag 'subModal', 'pro_dropdown_2'%>
+		<%=javascript_include_tag 'stuHover'%>
 	<%= yield :header %>
 </head>
 <body>
